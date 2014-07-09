@@ -59,10 +59,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootswatch.min.css" />
+    <Content Include="index.html" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="packages.config" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -72,6 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootswatch.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -80,7 +90,6 @@
   <ItemGroup>
     <Folder Include="App\" />
     <Folder Include="App_Start\" />
-    <Folder Include="Content\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
