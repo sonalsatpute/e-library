@@ -60,9 +60,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\comman\header.html" />
+    <Content Include="containts\e-library-logo.png" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
-    <Content Include="app\books\bookSearch.html" />
-    <Content Include="app\books\bookSearchController.js" />
+    <Content Include="app\books\search.html" />
+    <Content Include="app\books\searchController.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
     <Content Include="scripts\angular-route.js" />
     <Content Include="scripts\angular-route.min.js" />
     <Content Include="scripts\angular.js" />
@@ -70,6 +80,11 @@
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="packages.config" />
     <Content Include="scripts\angular-route.min.js.map" />
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -79,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="scripts\angular-mocks.js" />
+    <Content Include="scripts\jquery-2.1.1.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
