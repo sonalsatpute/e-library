@@ -7,7 +7,7 @@
         $scope.searchField = "Name";
 
         $scope.search = function (value) {
-            console.log($scope.searchFiled + " " + value);
+            console.log($scope.searchField + " " + value);
             return false;
             $location.path("bookList" + bookName);
 
