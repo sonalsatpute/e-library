@@ -17,20 +17,21 @@
                 <form ng-submit="search(searchQuery)" class=" navbar-form" role="search" name="searchBooks">
 
                     <div class="btn-group pull-left" style="margin-right:10px;">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        
+                        <button type="button" class="btn btn-info dropdown-toggle" style="width: 80px;" data-toggle="dropdown" ng-click="return false;">
                             {{ searchField }}
                             <span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Name</a></li>
-                            <li><a href="#">ISBN</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Auther</a></li>
+                        <ul ng-model="searchField"  class="dropdown-menu" role="menu">
+                            <li><a ng-click="searchField = 'Name'">Name</a></li>
+                            <li><a ng-click="searchField = 'ISBN'">ISBN</a></li>
+                            <li><a class="divider"></a></li>
+                            <li><a ng-click="searchField = 'Auther'">Auther</a></li>
                         </ul>
                     </div>
 
                     <div class="input-group">
-                        <input ng-model="searchQuery" type="text" class="form-control" placeholder="Search on {{ searchField }}">
+                        <input ng-model="searchQuery" type="text" class="form-control" placeholder="Search by book {{ searchField }}">
                         <div class="input-group-btn">
                             <button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-search"></i></button>
                         </div>

@@ -4,7 +4,7 @@
 
     var searchController = function ($scope, $location) {
 
-        $scope.searchField = "name";
+        $scope.searchField = "Name";
 
         $scope.search = function (value) {
             console.log($scope.searchFiled + " " + value);
