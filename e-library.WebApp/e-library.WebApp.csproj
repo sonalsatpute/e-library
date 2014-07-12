@@ -60,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\books\books.html" />
+    <Content Include="app\books\list-group-item.html" />
+    <Content Include="app\books\list-group.html" />
     <Content Include="containts\e-library-logo.png" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
