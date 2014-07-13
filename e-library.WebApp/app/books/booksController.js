@@ -2,24 +2,24 @@
 
     var app = angular.module("eLibrary");
 
-    var booksController = function ($scope, $modal) {
+    var booksController = function ($scope, $modal, $log) {
 
         $scope.book = "new book... .. .";
 
         $scope.open = function () {
-            console.log("Open ");
+            $log.log("Open ");
 
             var bookModalWindow = $modal.open({
                 templateUrl: "app/books/book.html",
                 controller: "bookController"
             });
 
-            bookModalWindow.result.then(function (item) {
+            bookModalWindow.result.then(function () {
 
-                console.write(item);
+                $log.log("result.then");
 
             }, function () {
-                console.write('Modal dismissed at: ' + new Date());
+                $log.log('Modal dismissed at: ' + new Date());
             });
         };
     };
