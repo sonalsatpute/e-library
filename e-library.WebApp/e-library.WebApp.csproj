@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\books\bookController.js" />
     <Content Include="app\books\books.html" />
     <Content Include="app\books\booksController.js" />
     <Content Include="app\books\list-group-item.html" />
@@ -78,7 +79,7 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
-    <Content Include="modal.html" />
+    <Content Include="app\books\book.html" />
     <Content Include="scripts\angular-route.js" />
     <Content Include="scripts\angular-route.min.js" />
     <Content Include="scripts\angular.js" />
