@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html ng-app="eLibrary">
 <head>
     <title>e-Library</title>
@@ -16,14 +16,20 @@
     <script src="app/app.js"></script>
     <script src="app/books/searchController.js"></script>
     <script src="app/books/booksController.js"></script>
+
 </head>
 <body>
-    
+
     <div ng-include src="'app/comman/header.html'"></div>
-   
     <div ng-view></div>
+
+    <!--<div ng-controller="booksController">
+        <button class="btn" ng-click="open()">Open me!</button>
+    </div>-->
+
 
     <script src="scripts/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.11.0.min.js"></script>
 </body>
 </html>
