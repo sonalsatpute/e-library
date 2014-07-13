@@ -61,8 +61,10 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\books\books.html" />
+    <Content Include="app\books\booksController.js" />
     <Content Include="app\books\list-group-item.html" />
     <Content Include="app\books\list-group.html" />
+    <Content Include="app\comman\header.html" />
     <Content Include="containts\e-library-logo.png" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
@@ -102,9 +104,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\comman\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

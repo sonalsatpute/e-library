@@ -5,8 +5,8 @@
     app.config(function ($routeProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "app/books/search.html",
-                controller: "searchController"
+                templateUrl: "app/books/books.html",
+                controller:  "booksController"
             })
             .otherwise({ redirectTo: "/" });
     });
