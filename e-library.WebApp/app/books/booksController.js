@@ -2,17 +2,19 @@
 
     var app = angular.module("eLibrary");
 
-    var booksController = function ($scope, $modal, $http, $log) {
+    var booksController = function ($scope, $modal, $http, $log, Search) {
 
-      var promise = $http.get("http://localhost:56619/api/books");
+        $scope.search = Search;
 
-      promise.then(function (resonse) {
-        $log.log("promise.then");
-        $scope.books = resonse.data;
-        $scope.RecordCount = $scope.books.length;
-      });
+        var promise = $http.get("http://localhost:56619/api/books");
 
-      
+        promise.then(function (resonse) {
+            $log.log("promise.then");
+            $scope.books = resonse.data;
+            $scope.RecordCount = $scope.books.length;
+        });
+
+
         $scope.open = function () {
             $log.log("Open ");
 

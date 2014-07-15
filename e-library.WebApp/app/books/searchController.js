@@ -2,16 +2,14 @@
 
     var app = angular.module("eLibrary");
 
-    var searchController = function ($scope, $location) {
+    var searchController = function ($scope, Search) {
 
-        $scope.searchOn = 'Title';
+        $scope.search = Search;
 
-        $scope.search = function (value) {
-            console.log($scope.searchOn + " " + value);
-            return false;
-            $location.path("bookList" + bookName);
-
-        };
+        //$scope.filter = function (value) {
+        //    console.log(search.by + " " + value);
+        //    return false;
+        //};
     };
 
     app.controller("searchController", searchController);

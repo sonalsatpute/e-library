@@ -66,6 +66,7 @@
     <Content Include="app\books\list-group-item.html" />
     <Content Include="app\books\list-group.html" />
     <Content Include="app\comman\header.html" />
+    <Content Include="app\comman\search.js" />
     <Content Include="containts\e-library-logo.png" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />

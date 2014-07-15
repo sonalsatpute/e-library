@@ -1,4 +1,4 @@
-﻿<div ng-controller="booksController" class="container" >
+﻿<div class="container" >
     <div class="=row">
         <div class="pull-left">
             <div>
@@ -6,7 +6,7 @@
             </div>
 
             <div>
-                Records: <span class="badge"> {{ books.length }}</span>
+                Records: <span class="badge"> {{ (books |filter: search.q).length }}</span>
             </div>
         </div>
 

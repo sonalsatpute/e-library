@@ -1,7 +1,9 @@
 ﻿(function() {
     var app = angular.module("eLibrary");
 
-    var bookController = function ($scope, $modalInstance,$log) {
+    var bookController = function ($scope, $modalInstance,$log,data) {
+
+        $scope.data = data;
 
         $scope.save = function () {
             $log.log("save");
