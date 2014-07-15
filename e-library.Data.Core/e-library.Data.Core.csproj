@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53716B6B-8B5B-42F2-A120-61507DFFC4E7}</ProjectGuid>
+    <ProjectGuid>{717DCDAD-D11F-4BAE-9376-50B9919F355E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>e_library.Core</RootNamespace>
-    <AssemblyName>e-library.Core</AssemblyName>
+    <RootNamespace>e_library.Data.Core</RootNamespace>
+    <AssemblyName>e-library.Data.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBook.cs" />
+    <Compile Include="IBookRepository.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

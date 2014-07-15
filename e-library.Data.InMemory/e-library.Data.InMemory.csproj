@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9EB58F9E-1F0B-4D00-815E-5F2CB1B4676F}</ProjectGuid>
+    <ProjectGuid>{B7C60992-E4FD-4B22-A983-B7D9AC333565}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>e_library.Model</RootNamespace>
-    <AssemblyName>e-library.Model</AssemblyName>
+    <RootNamespace>e_library.Data.InMemory</RootNamespace>
+    <AssemblyName>e-library.Data.InMemory</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,9 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book.cs" />
-    <Compile Include="Entity.cs" />
+    <Compile Include="BookRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\e-library.Data.Core\e-library.Data.Core.csproj">
+      <Project>{717DCDAD-D11F-4BAE-9376-50B9919F355E}</Project>
+      <Name>e-library.Data.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\e-library.Model\e-library.Model.csproj">
+      <Project>{9EB58F9E-1F0B-4D00-815E-5F2CB1B4676F}</Project>
+      <Name>e-library.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

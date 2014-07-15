@@ -13,7 +13,6 @@ namespace e_library.WebApi
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
-
         }
     }
 }

@@ -4,16 +4,14 @@
 
     var searchController = function ($scope, $location) {
 
-        $scope.searchField = "Name";
+        $scope.searchOn = 'Title';
 
         $scope.search = function (value) {
-            console.log($scope.searchField + " " + value);
+            console.log($scope.searchOn + " " + value);
             return false;
             $location.path("bookList" + bookName);
 
         };
-
-        $scope.bookName = "";
     };
 
     app.controller("searchController", searchController);
