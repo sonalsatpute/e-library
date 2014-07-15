@@ -1,6 +1,5 @@
 <div ng-controller="searchController" class=" col-sm-6 col-md-6">
-    <form class=" navbar-form" role="search" name="filterBooks">
-        
+    <form class="navbar-form nav navbar-nav" role="search" name="filterBooks">
         <div class="input-group">
             <input ng-model="search.q" type="text" class="form-control" placeholder="Search books">
             <div class="input-group-btn">
@@ -8,7 +7,7 @@
             </div>
         </div>
 
-        <div class="input-group" style="margin-right:10px;">
+        <div class="input-group">
             <button type="button" class="btn btn-info dropdown-toggle" style="width: 150px;" data-toggle="dropdown" onclick="return false;">
                 Sort By: {{ search.by }}
                 <span class="caret"></span>
@@ -20,7 +19,5 @@
                 <li><a ng-click="search.by = 'Author'">Author</a></li>
             </ul>
         </div>
-
-        
     </form>
 </div>
