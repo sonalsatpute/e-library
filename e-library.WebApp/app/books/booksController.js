@@ -11,47 +11,57 @@
             Search.books = data;
         };
 
+        var onBookDeleted = function(book, index) {
+            Search.books.splice(index, 1);
+            alert(book.title +" delete success!");
+        };
+
         var onError = function (reason) {
-            $log.log("onErro");
+            $log.log(reason);
             $scope.error = "Could not fetch the data.";
         };
 
         library.getBooks().then(onBooksCompleted, onError);
 
-        $scope.open = function () {
-            $log.log("Open ");
-
+        var newBook = function (book) {
+            Search.book = book;
+            alert(Search.book.title);
             var bookModalWindow = $modal.open({
                 templateUrl: "app/books/book.html",
-                controller: "bookController"
+                controller: "booksController"
             });
 
             bookModalWindow.result.then(function () {
 
+                Search.book = {};
                 $log.log("result.then");
 
             }, function () {
+                Search.book = {};
                 $log.log('Modal dismissed at: ' + new Date());
             });
         };
 
+        var editBook = function(id) {
+            library.getBook(id)
+                .then(function (data) {
 
-        
+                    newBook(data);
+            }, onError);
+        }
 
         var deleteBook = function (book) {
             var index = Search.books.indexOf(book);
             var result = confirm("Are you sure, you want to delte '" + Search.books[index].title + "' ?");
             if (result == true) {
-                library.deleteBook(book.id).then(function () {
-                    Search.books.splice(index, 1);
-                    alert("delete success");
-                }, onError);
-                
+                library.deleteBook(book.id).then(onBookDeleted(book, index), onError);
             }
         };
 
-
+        $scope.newBook = newBook;
+        $scope.editBook = editBook;
         $scope.deleteBook = deleteBook;
+        
 
 
     };
