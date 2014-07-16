@@ -58,9 +58,9 @@ namespace e_library.Data.InMemory
             return book;
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            _books.RemoveAll(b => b.Id == id);
+            return _books.RemoveAll(b => b.Id == id) > 0;
         }
     }
 }

@@ -9,6 +9,6 @@ namespace e_library.Data.Core
         TEntity Get(int id);
         TEntity Add(TEntity entity);
         TEntity Edit(TEntity entity);
-        void Delete(int id);
+        bool Delete(int id);
     }
 }

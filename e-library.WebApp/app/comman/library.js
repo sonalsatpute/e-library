@@ -4,13 +4,21 @@
 
         var getBooks = function() {
             return $http.get("http://localhost:56619/api/books")
-                        .then(function(response) {
-                            return response.data;
-                        });
+                .then(function(response) {
+                    return response.data;
+                });
+        };
+
+        var deleteBook = function(id) {
+            return $http.delete("http://localhost:56619/api/books/" + id)
+                .then(function(response) {
+                return response.data;
+            });
         };
 
         return {
-            getBooks: getBooks
+            getBooks: getBooks,
+            deleteBook: deleteBook
         };
     };
 

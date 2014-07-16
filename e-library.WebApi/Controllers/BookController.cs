@@ -45,5 +45,13 @@ namespace e_library.WebApi.Controllers
 
             return Created<Book>(string.Format("{0}/{1}", Request.RequestUri, editBook.Id), editBook);
         }
+
+        [Route("{id}")]
+        public IHttpActionResult Delete(int id)
+        {
+            if (!Repository.Delete(id)) return NotFound();
+
+            return Ok();
+        }
     }
 }
