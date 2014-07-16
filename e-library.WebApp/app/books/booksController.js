@@ -2,18 +2,21 @@
 
     var app = angular.module("eLibrary");
 
-    var booksController = function ($scope, $modal, $http, $log, Search) {
+    var booksController = function ($scope, $modal, $http, $log, Search, library) {
 
         $scope.search = Search;
 
-        var promise = $http.get("http://localhost:56619/api/books");
+        var onBooksCompleted = function (data) {
+            $log.log("onBooksCompleted");
+            $scope.books = data;
+        };
 
-        promise.then(function (resonse) {
-            $log.log("promise.then");
-            $scope.books = resonse.data;
-            $scope.RecordCount = $scope.books.length;
-        });
+        var onError = function (reason) {
+            $log.log("onErro");
+            $scope.error = "Could not fetch the data.";
+        };
 
+        library.getBooks().then(onBooksCompleted, onError);
 
         $scope.open = function () {
             $log.log("Open ");
