@@ -23,12 +23,11 @@
 
         library.getBooks().then(onBooksCompleted, onError);
 
-        var newBook = function (book) {
-            Search.book = book;
-            alert(Search.book.title);
+        var newBook = function () {
+            Search.book = {};
             var bookModalWindow = $modal.open({
-                templateUrl: "app/books/book-edit.html",
-                controller: "booksController"
+                templateUrl: "app/books/book-add.html",
+                controller: "bookAddController"
             });
 
             bookModalWindow.result.then(function () {

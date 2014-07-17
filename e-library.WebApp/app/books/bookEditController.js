@@ -18,9 +18,6 @@
         var onUpdated = function(book) {
             remove(book.id);
             Search.books.push(book);
-
-            //alert("Updated!!");
-
         };
 
         var onError = function(reasone) {

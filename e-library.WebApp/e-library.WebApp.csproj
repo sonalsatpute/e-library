@@ -60,7 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\books\book-add.html" />
     <Content Include="app\books\book-edit.html" />
+    <Content Include="app\books\bookAddController.js" />
     <Content Include="app\books\bookController.js" />
     <Content Include="app\books\book-list.html" />
     <Content Include="app\books\bookEditController.js" />
