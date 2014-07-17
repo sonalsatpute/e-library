@@ -26,18 +26,26 @@
             });
         };
 
-        var updateBook = function(book) {
-            return $http.put(baseBookApiUrl + "/" + book.id, book)
+        var editBook = function(book) {
+            return $http.put(baseBookApiUrl, book)
                 .then(function(response) {
                     return response.data;
                 });
-        }
+        };
+
+        var addBook = function(book) {
+            return $http.post(baseBookApiUrl, book)
+                .then(function (response) {
+                    return response.data;
+                });
+        };
 
         return {
             getBooks: getBooks,
             getBook: getBook,
             deleteBook: deleteBook,
-            updateBook: updateBook
+            editBook: editBook,
+            addBook: addBook
         };
     };
 

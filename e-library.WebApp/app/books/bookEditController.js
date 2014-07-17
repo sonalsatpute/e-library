@@ -4,18 +4,23 @@
         $scope.search = Search;
 
         var onUpdated = function(book) {
-            
+            var index = Search.books.indexOf(book);
+            Search.books.splice(index, 1);
+            Search.books.push(book);
+
+            alert("Updated!!");
+
         };
 
-        var onError = function() {
+        var onError = function(reasone) {
             
         }
 
-        var updateBook = function(book) {
-            library.update().then(onUpdated, onError);
+        var editBook = function(book) {
+            library.editBook(book).then(onUpdated, onError);
         };
 
-        $scope.updateBook = updateBook;
+        $scope.editBook = editBook;
     };
 
     var app = angular.module("eLibrary");
