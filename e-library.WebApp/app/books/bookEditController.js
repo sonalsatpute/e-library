@@ -3,12 +3,23 @@
     var bookEditController = function($scope, library, Search) {
         $scope.search = Search;
 
+        var remove = function (bookId) {
+            var index = -1;
+            var books = Search.books;
+            books.forEach(function(item) {
+                index++;
+                if (item.id == bookId) {
+                    Search.books.splice(index, 1);
+                }
+            });
+        };
+
+
         var onUpdated = function(book) {
-            var index = Search.books.indexOf(book);
-            Search.books.splice(index, 1);
+            remove(book.id);
             Search.books.push(book);
 
-            alert("Updated!!");
+            //alert("Updated!!");
 
         };
 

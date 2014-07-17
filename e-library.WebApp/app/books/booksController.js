@@ -41,11 +41,12 @@
             });
         };
 
-        var editBook = function (id) {
-            library.getBook(id)
+        var editBook = function (book) {
+ 
+            library.getBook(book.id)
                 .then(function (data) {
                     Search.book = data;
-
+                    Search.book.$$hashKey = book.$$hashKey;
                 var bookModalWindow = $modal.open({
                     templateUrl: "app/books/book-edit.html",
                     controller: "bookEditController"
