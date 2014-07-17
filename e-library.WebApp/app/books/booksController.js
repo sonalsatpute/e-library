@@ -5,15 +5,15 @@
     var booksController = function ($scope, $modal, $http, $log, Search, library) {
 
         $scope.search = Search;
-        
+
         var onBooksCompleted = function (data) {
             $log.log("onBooksCompleted");
             Search.books = data;
         };
 
-        var onBookDeleted = function(book, index) {
+        var onBookDeleted = function (book, index) {
             Search.books.splice(index, 1);
-            alert(book.title +" delete success!");
+            alert(book.title + " delete success!");
         };
 
         var onError = function (reason) {
@@ -27,12 +27,11 @@
             Search.book = book;
             alert(Search.book.title);
             var bookModalWindow = $modal.open({
-                templateUrl: "app/books/book.html",
+                templateUrl: "app/books/book-edit.html",
                 controller: "booksController"
             });
 
             bookModalWindow.result.then(function () {
-
                 Search.book = {};
                 $log.log("result.then");
 
@@ -42,11 +41,16 @@
             });
         };
 
-        var editBook = function(id) {
+        var editBook = function (id) {
             library.getBook(id)
                 .then(function (data) {
+                    Search.book = data;
 
-                    newBook(data);
+                var bookModalWindow = $modal.open({
+                    templateUrl: "app/books/book-edit.html",
+                    controller: "bookEditController"
+                });
+
             }, onError);
         }
 
@@ -61,7 +65,7 @@
         $scope.newBook = newBook;
         $scope.editBook = editBook;
         $scope.deleteBook = deleteBook;
-        
+
 
 
     };

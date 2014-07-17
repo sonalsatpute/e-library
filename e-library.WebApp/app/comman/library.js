@@ -26,12 +26,18 @@
             });
         };
 
-
+        var updateBook = function(book) {
+            return $http.put(baseBookApiUrl + "/" + book.id, book)
+                .then(function(response) {
+                    return response.data;
+                });
+        }
 
         return {
             getBooks: getBooks,
             getBook: getBook,
-            deleteBook: deleteBook
+            deleteBook: deleteBook,
+            updateBook: updateBook
         };
     };
 
