@@ -1,6 +1,6 @@
-﻿(function () {
+﻿(function() {
 
-    var message = function () {
+    var message = function() {
 
         toastr.options = {
             "closeButton": true,
@@ -17,23 +17,23 @@
             "hideMethod": "fadeOut"
         };
 
-        var clear = function () {
+        var clear = function() {
             toastr.clear();
         };
 
-        var success = function (title, text) {
+        var success = function(title, text) {
             toastr.success(title, text);
         };
 
-        var info = function (title, text) {
+        var info = function(title, text) {
             toastr.info(title, text);
         };
 
-        var warning = function (title, text) {
+        var warning = function(title, text) {
             toastr.warning(title, text);
         };
-        
-        var error = function (title, text) {
+
+        var error = function(title, text) {
             toastr.error(title, text);
         };
 
@@ -42,11 +42,11 @@
             info: info,
             warning: warning,
             error: error,
-            clear : clear
+            clear: clear
         };
     };
 
     var app = angular.module("eLibrary");
     app.factory("message", message);
-    
+
 })();

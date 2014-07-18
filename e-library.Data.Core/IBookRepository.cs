@@ -4,6 +4,5 @@ namespace e_library.Data.Core
 {
     public interface IBookRepository : IRepository<Book>
     {
-
     }
 }

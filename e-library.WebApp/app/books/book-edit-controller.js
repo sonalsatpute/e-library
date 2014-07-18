@@ -1,10 +1,10 @@
-﻿(function () {
+﻿(function() {
 
-    var bookEditController = function ($scope, $log, libraryApi, Library, message) {
+    var bookEditController = function($scope, $log, libraryApi, Library, message) {
 
         $scope.library = Library;
 
-        var editBook = function (book) {
+        var editBook = function(book) {
 
             message.info("Saving book");
             libraryApi.editBook(book)
@@ -18,7 +18,7 @@
                 });
         };
 
-        var cancel = function () {
+        var cancel = function() {
             Library.modalWindow.dismiss("Cancel");
         };
 

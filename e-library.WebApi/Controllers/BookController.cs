@@ -9,7 +9,7 @@ namespace e_library.WebApi.Controllers
     [RoutePrefix("api/books")]
     public class BooksController : ApiController
     {
-        static readonly IBookRepository Repository = new BookRepository();
+        private static readonly IBookRepository Repository = new BookRepository();
 
         [Route("")]
         public IEnumerable<Book> GetAll()
@@ -35,7 +35,7 @@ namespace e_library.WebApi.Controllers
 
             if (newBook == null) return Conflict();
 
-            return Created<Book>(string.Format("{0}/{1}", Request.RequestUri, newBook.Id), newBook);
+            return Created(string.Format("{0}/{1}", Request.RequestUri, newBook.Id), newBook);
         }
 
         [Route("")]
@@ -47,7 +47,7 @@ namespace e_library.WebApi.Controllers
 
             if (editBook == null) return Conflict();
 
-            return Created<Book>(string.Format("{0}/{1}", Request.RequestUri, editBook.Id), editBook);
+            return Created(string.Format("{0}/{1}", Request.RequestUri, editBook.Id), editBook);
         }
 
         [Route("{id}")]

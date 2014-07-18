@@ -1,20 +1,19 @@
-﻿(function () {
+﻿(function() {
 
-    var Library = function () {
+    var Library = function() {
 
         var books = [];
 
-        var addBooks = function (books)
-        {
+        var addBooks = function(books) {
             this.books = books;
         };
 
-        var addBook = function (book) {
+        var addBook = function(book) {
             this.books.unshift(book);
         };
 
-        var editBook = function (book) {
-            this.books.forEach(function (item) {
+        var editBook = function(book) {
+            this.books.forEach(function(item) {
                 if (item.id == book.id) {
                     item.title = book.title;
                     item.isbn = book.isbn;

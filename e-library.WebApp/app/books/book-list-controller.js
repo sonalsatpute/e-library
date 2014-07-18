@@ -1,27 +1,27 @@
-﻿(function () {
+﻿(function() {
 
-    var bookListController = function ($scope, $modal, $log, Library, libraryApi, message) {
+    var bookListController = function($scope, $modal, $log, Library, libraryApi, message) {
 
         $scope.library = Library;
 
-        var newBook = function () {
+        var newBook = function() {
             Library.book = {};
             Library.modalWindow = $modal.open({
                 templateUrl: "app/books/book-add.html"
             });
         };
 
-        var editBook = function (book) {
+        var editBook = function(book) {
             message.info("Getting book details.");
             libraryApi.getBook(book.id)
-                .then(function (data) {
+                .then(function(data) {
                     Library.book = data;
                     message.success("Book details are ready to edit.");
                     Library.modalWindow = $modal.open({
                         templateUrl: "app/books/book-edit.html",
                         controller: "bookEditController"
                     });
-                }, function (reason) {
+                }, function(reason) {
                     message.error("Unable to get the deails from server.");
                     $log.log(reason);
                 });
@@ -32,14 +32,14 @@
             var index = Library.books.indexOf(book);
 
             var result = confirm("Are you sure, you want to delete '" + Library.books[index].title + "' ?");
-            
+
             if (result == true) {
                 message.info("Deleting the book from server.");
                 libraryApi.deleteBook(book.id)
                     .then(function() {
                         Library.books.splice(index, 1);
                         message.success("Book deleted.");
-                    }, function (reason) {
+                    }, function(reason) {
                         message.error("Unable to get the deails from server.");
                         $log.log(reason);
                     });
