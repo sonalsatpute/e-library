@@ -62,17 +62,18 @@
     <Content Include="app\app.js" />
     <Content Include="app\books\book-add.html" />
     <Content Include="app\books\book-edit.html" />
-    <Content Include="app\books\bookAddController.js" />
-    <Content Include="app\books\bookController.js" />
+    <Content Include="app\books\book-add-controller.js" />
     <Content Include="app\books\book-list.html" />
-    <Content Include="app\books\bookEditController.js" />
-    <Content Include="app\books\booksController.js" />
-    <Content Include="app\books\list-group-item.html" />
-    <Content Include="app\books\list-group.html" />
+    <Content Include="app\books\book-edit-controller.js" />
+    <Content Include="app\books\book-list-controller.js" />
+    <Content Include="app\books\_list-group-item.html" />
+    <Content Include="app\books\_list-group.html" />
+    <Content Include="app\comman\_header.html" />
+    <Content Include="app\comman\library-api.js" />
+    <Content Include="app\comman\message.js" />
     <Content Include="app\comman\library.js" />
-    <Content Include="app\comman\header.html" />
-    <Content Include="app\comman\search.js" />
-    <Content Include="containts\e-library-logo.png" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -80,12 +81,12 @@
     <Content Include="css\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
-    <Content Include="app\books\search.html" />
-    <Content Include="app\books\searchController.js" />
+    <Content Include="app\comman\_search-form.html" />
+    <Content Include="app\comman\search-controller.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
-    <Content Include="app\books\book.html" />
+    <Content Include="app\books\_book-form.html" />
     <Content Include="scripts\angular-route.js" />
     <Content Include="scripts\angular-route.min.js" />
     <Content Include="scripts\angular.js" />
@@ -98,6 +99,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="scripts\toastr.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -108,6 +110,7 @@
   <ItemGroup>
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\jquery-2.1.1.min.js" />
+    <Content Include="scripts\toastr.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

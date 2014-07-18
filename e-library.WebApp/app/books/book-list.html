@@ -1,22 +1,19 @@
-﻿<div ng-controller="booksController" class="container" >
+﻿<div class="container">
     <div class="=row">
         <div class="pull-left">
             <div>
                 <h3>Books</h3>
             </div>
-
             <div>
-                Records: <span class="badge"> {{ (search.books |filter: search.q).length }}</span>
+                Records: <span class="badge"> {{ (library.books |filter: library.filter).length }}</span>
             </div>
         </div>
-
         <div class="pull-right">
             <div ng-click="newBook()" class="btn btn-success" title="add button">
                 <i class="glyphicon glyphicon glyphicon-plus"></i> Add Book
             </div>
         </div>
-
     </div>
 </div>
 
-<p ng-include src="'app/books/list-group.html'"></p>
+<p ng-include src="'app/books/_list-group.html'"></p>

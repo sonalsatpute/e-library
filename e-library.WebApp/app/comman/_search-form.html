@@ -1,22 +1,23 @@
 <div ng-controller="searchController" class=" col-sm-6 col-md-6">
     <form class="navbar-form nav navbar-nav" role="search" name="filterBooks">
         <div class="input-group">
-            <input ng-model="search.q" type="text" class="form-control" placeholder="Search books">
+            {{ (library.books |filter: library.filter).length }}
+            <input ng-model="library.filter" type="text" class="form-control" placeholder="Search books">
             <div class="input-group-btn">
                 <button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-search"></i></button>
             </div>
         </div>
-
         <div class="input-group">
-            <button type="button" class="btn btn-info dropdown-toggle" style="width: 150px;" data-toggle="dropdown" onclick="return false;">
-                Sort By: {{ search.by }}
+            <button type="button" class="btn btn-info dropdown-toggle" style="width: 160px;" data-toggle="dropdown" onclick="return false;">
+                Sort by {{ library.sortBy  }}
                 <span class="caret"></span>
             </button>
+            
             <ul ng-model="search.by" class="dropdown-menu" role="menu">
-                <li><a ng-click="search.by = 'title'">Title</a></li>
-                <li><a ng-click="search.by = 'isbn'">ISBN</a></li>
+                <li><a ng-click="library.sortBy = 'title'">Title</a></li>
+                <li><a ng-click="library.sortBy = 'isbn'">ISBN</a></li>
                 <li><a class="divider"></a></li>
-                <li><a ng-click="search.by = 'author'">Author</a></li>
+                <li><a ng-click="library.sortBy = 'author'">Author</a></li>
             </ul>
         </div>
     </form>

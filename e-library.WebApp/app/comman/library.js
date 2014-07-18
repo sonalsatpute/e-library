@@ -1,55 +1,49 @@
 ﻿(function () {
-    
-    var library = function ($http) {
 
-        var baseBookApiUrl = "http://localhost:56619/api/books";
+    var Library = function () {
 
+        var books = [];
 
-        var getBooks = function() {
-            return $http.get(baseBookApiUrl)
-                .then(function(response) {
-                    return response.data;
-                });
+        var addBooks = function (books)
+        {
+            this.books = books;
         };
 
-        var getBook = function(id) {
-            return $http.get(baseBookApiUrl + "/" + id)
-                .then(function (response) {
-                    return response.data;
-                });
+        var addBook = function (book) {
+            this.books.unshift(book);
+        };
+
+        var editBook = function() {
         };
 
         var deleteBook = function(id) {
-            return $http.delete(baseBookApiUrl + "/" + id)
-                .then(function(response) {
-                return response.data;
-            });
-        };
-
-        var editBook = function(book) {
-            return $http.put(baseBookApiUrl, book)
-                .then(function(response) {
-                    return response.data;
-                });
-        };
-
-        var addBook = function(book) {
-            return $http.post(baseBookApiUrl, book)
-                .then(function (response) {
-                    return response.data;
-                });
         };
 
         return {
-            getBooks: getBooks,
-            getBook: getBook,
-            deleteBook: deleteBook,
-            editBook: editBook,
+            sortBy: "title",
+            filter: "",
+            modalWindow: {},
+            books: books,
+            book: {},
+            addBooks: addBooks,
             addBook: addBook
         };
     };
 
+
     var app = angular.module("eLibrary");
-    app.factory("library", library);
+    app.factory("Library", Library);
+
+
+    //app.factory("Search", function () {
+
+    //    return {
+    //        by: "Title",
+    //        q: "",
+    //        books: [],
+    //        book: {},
+    //        modalWindow: {}
+    //    };
+    //});
 
 })();

@@ -9,29 +9,30 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="content/toastr.min.css" rel="stylesheet" />
 
     <script src="scripts/angular.js"></script>
     <script src="scripts/angular-route.js"></script>
-
+    
     <script src="app/app.js"></script>
+    
+    <script src="app/comman/library-api.js"></script>
     <script src="app/comman/library.js"></script>
-    <script src="app/comman/search.js"></script>
+    <script src="app/comman/message.js"></script>
 
-    <script src="app/books/searchController.js"></script>
-    <script src="app/books/booksController.js"></script>
-    <script src="app/books/bookEditController.js"></script>
-    <script src="app/books/bookAddController.js"></script>
-
-    <script src="app/books/bookController.js"></script>
-
+    <script src="app/comman/search-controller.js"></script>
+    <script src="app/books/book-list-controller.js"></script>
+    <script src="app/books/book-edit-controller.js"></script>
+    <script src="app/books/book-add-controller.js"></script>
 </head>
 <body>
 
-    <div ng-include src="'app/comman/header.html'"></div>
+    <div ng-include src="'app/comman/_header.html'"></div>
     <div ng-view></div>
 
     <script src="scripts/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="scripts/toastr.min.js"></script>
     <script src="js/ui-bootstrap-tpls-0.11.0.min.js"></script>
     
 </body>
