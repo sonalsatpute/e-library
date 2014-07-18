@@ -4,17 +4,6 @@
 
         $scope.library = Library;
 
-        message.success("Featching book from searver.");
-
-        libraryApi.getBooks()
-            .then(function (data) {
-                Library.addBooks(data);
-                message.success("Book list loaded.");
-            }, function (reasone) {
-                message.error("Could not fetch data from server.");
-                $log.log(reasone);
-            });
-
         var newBook = function () {
             Library.book = {};
             Library.modalWindow = $modal.open({

@@ -1,13 +1,14 @@
 ﻿(function () {
 
     var bookEditController = function ($scope, libraryApi, Library, message) {
+
         $scope.library = Library;
 
         var update = function (book) {
             var books = Library.books;
             books.forEach(function (item) {
                 if (item.id == book.id) {
-                    item.titile = book.titke;
+                    item.title = book.title;
                     item.isbn = book.isbn;
                     item.author = book.author;
                 }
