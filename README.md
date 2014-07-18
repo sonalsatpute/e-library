@@ -12,8 +12,8 @@ Please follow the below steps to run the application from visual studio.
 6. e-library.WebApp -> Start
 7. Arrange the start up sequence in same order 
 8. Make sure to start the web api first.
-9. click on Ok button.
-10. and press F5
+9. Click on Ok button.
+10. And press F5
 
 
 :D
