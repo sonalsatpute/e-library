@@ -72,8 +72,8 @@
     <Content Include="app\comman\library-api.js" />
     <Content Include="app\comman\message.js" />
     <Content Include="app\comman\library.js" />
-    <Content Include="content\toastr.css" />
-    <Content Include="content\toastr.min.css" />
+    <Content Include="css\toastr.css" />
+    <Content Include="css\toastr.min.css" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />

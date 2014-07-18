@@ -38,7 +38,6 @@
                 libraryApi.deleteBook(book.id)
                     .then(function() {
                         Library.books.splice(index, 1);
-                        message.clear();
                         message.success("Book deleted.");
                     }, function (reason) {
                         message.error("Unable to get the deails from server.");
