@@ -1,9 +1,9 @@
 (function () {
 
-    var searchController = function ($scope, Library, libraryApi, message) {
+    var mainController = function ($scope, Library, libraryApi, message) {
         $scope.library = Library;
 
-        message.success("Featching book from searver.");
+        message.info("Featching book from searver.");
 
         libraryApi.getBooks()
             .then(function (data) {
@@ -13,9 +13,10 @@
                 message.error("Could not fetch data from server.");
                 $log.log(reasone);
             });
+
     };
 
     var app = angular.module("eLibrary");
-    app.controller("searchController", searchController);
+    app.controller("mainController", mainController);
 
 }());

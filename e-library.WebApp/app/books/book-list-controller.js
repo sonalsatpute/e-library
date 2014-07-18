@@ -31,7 +31,7 @@
 
             var index = Library.books.indexOf(book);
 
-            var result = confirm("Are you sure, you want to delte '" + Library.books[index].title + "' ?");
+            var result = confirm("Are you sure, you want to delete '" + Library.books[index].title + "' ?");
             
             if (result == true) {
                 message.info("Deleting the book from server.");

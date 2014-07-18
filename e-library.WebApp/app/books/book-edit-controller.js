@@ -1,33 +1,21 @@
 ﻿(function () {
 
-    var bookEditController = function ($scope, libraryApi, Library, message) {
+    var bookEditController = function ($scope, $log, libraryApi, Library, message) {
 
         $scope.library = Library;
 
-        var update = function (book) {
-            var books = Library.books;
-            books.forEach(function (item) {
-                if (item.id == book.id) {
-                    item.title = book.title;
-                    item.isbn = book.isbn;
-                    item.author = book.author;
-                }
-            });
-            message.success("Book saved.");
-        };
-        
-        var onUpdated = function (book) {
-            update(book);
-            Library.modalWindow.close();
-        };
-
-        var onError = function (reasone) {
-            Library.modalWindow.dismiss(reasone);
-        };
-
         var editBook = function (book) {
+
             message.info("Saving book");
-            libraryApi.editBook(book).then(onUpdated, onError);
+            libraryApi.editBook(book)
+                .then(function(data) {
+                    Library.editBook(data);
+                    Library.modalWindow.close();
+                    message.success("Book saved.");
+                }, function(reason) {
+                    Library.modalWindow.dismiss(reason);
+                    $log.log(reason);
+                });
         };
 
         var cancel = function () {

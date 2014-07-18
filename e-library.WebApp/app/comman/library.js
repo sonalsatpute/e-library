@@ -13,7 +13,15 @@
             this.books.unshift(book);
         };
 
-        var editBook = function() {
+        var editBook = function (book) {
+            this.books.forEach(function (item) {
+                if (item.id == book.id) {
+                    item.title = book.title;
+                    item.isbn = book.isbn;
+                    item.author = book.author;
+                    return;
+                }
+            });
         };
 
         var deleteBook = function(id) {
@@ -26,7 +34,8 @@
             books: books,
             book: {},
             addBooks: addBooks,
-            addBook: addBook
+            addBook: addBook,
+            editBook: editBook
         };
     };
 

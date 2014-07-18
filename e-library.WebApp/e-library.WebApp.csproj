@@ -82,7 +82,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
     <Content Include="app\comman\_search-form.html" />
-    <Content Include="app\comman\search-controller.js" />
+    <Content Include="app\comman\main-controller.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />

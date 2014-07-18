@@ -5,7 +5,7 @@
         $scope.library = Library;
         
         var addBook = function (book) {
-            message.info("Saving the book." + book.title);
+            message.info("Saving the book " + book.title);
             libraryApi.addBook(book)
                 .then(function(newBook) {
                     Library.addBook(newBook);
