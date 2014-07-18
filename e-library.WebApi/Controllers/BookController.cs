@@ -29,6 +29,7 @@ namespace e_library.WebApi.Controllers
         [Route("")]
         public IHttpActionResult Post(Book book)
         {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
             Book newBook = Repository.Add(book);
 
             if (newBook == null) return Conflict();
@@ -39,6 +40,7 @@ namespace e_library.WebApi.Controllers
         [Route("")]
         public IHttpActionResult Put(Book book)
         {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
             Book editBook = Repository.Edit(book);
 
             if (editBook == null) return Conflict();
