@@ -1,15 +1,15 @@
 ﻿(function() {
 
-    var bookAddController = function($scope, $log, libraryApi, Library, message) {
+    var bookAddController = function ($scope, $log, library, libraryApi, message) {
 
-        $scope.library = Library;
+        $scope.library = library;
 
         var addBook = function(book) {
             message.info("Saving the book " + book.title);
             libraryApi.addBook(book)
                 .then(function(newBook) {
-                    Library.addBook(newBook);
-                    Library.modalWindow.close();
+                    library.addBook(newBook);
+                    library.modalWindow.close();
                     message.success("Book saved.");
                 }, function(reason) {
                     message.error("Unable to save the book.");
@@ -18,7 +18,7 @@
         };
 
         var cancel = function() {
-            Library.modalWindow.dismiss();
+            library.modalWindow.dismiss();
         };
 
         $scope.addBook = addBook;

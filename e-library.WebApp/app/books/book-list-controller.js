@@ -1,12 +1,12 @@
 ﻿(function() {
 
-    var bookListController = function($scope, $modal, $log, Library, libraryApi, message) {
+    var bookListController = function ($scope, $modal, $log, library, libraryApi, message) {
 
-        $scope.library = Library;
+        $scope.library = library;
 
         var newBook = function() {
-            Library.book = {};
-            Library.modalWindow = $modal.open({
+            library.book = {};
+            library.modalWindow = $modal.open({
                 templateUrl: "app/books/book-add.html"
             });
         };
@@ -15,9 +15,9 @@
             message.info("Getting book details.");
             libraryApi.getBook(book.id)
                 .then(function(data) {
-                    Library.book = data;
+                    library.book = data;
                     message.success("Book details are ready to edit.");
-                    Library.modalWindow = $modal.open({
+                    library.modalWindow = $modal.open({
                         templateUrl: "app/books/book-edit.html",
                         controller: "bookEditController"
                     });
@@ -29,15 +29,15 @@
 
         var deleteBook = function(book) {
 
-            var index = Library.books.indexOf(book);
+            var index = library.books.indexOf(book);
 
-            var result = confirm("Are you sure, you want to delete '" + Library.books[index].title + "' ?");
+            var result = confirm("Are you sure, you want to delete '" + library.books[index].title + "' ?");
 
             if (result == true) {
                 message.info("Deleting the book from server.");
                 libraryApi.deleteBook(book.id)
                     .then(function() {
-                        Library.books.splice(index, 1);
+                        library.books.splice(index, 1);
                         message.success("Book deleted.");
                     }, function(reason) {
                         message.error("Unable to get the deails from server.");

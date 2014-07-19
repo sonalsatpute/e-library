@@ -1,6 +1,6 @@
 ﻿(function() {
 
-    var Library = function() {
+    var library = function() {
 
         var books = [];
 
@@ -40,18 +40,5 @@
 
 
     var app = angular.module("eLibrary");
-    app.factory("Library", Library);
-
-
-    //app.factory("Search", function () {
-
-    //    return {
-    //        by: "Title",
-    //        q: "",
-    //        books: [],
-    //        book: {},
-    //        modalWindow: {}
-    //    };
-    //});
-
+    app.factory("library", library);
 })();

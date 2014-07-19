@@ -1,13 +1,13 @@
 (function() {
 
-    var mainController = function($scope, Library, libraryApi, message) {
-        $scope.library = Library;
+    var mainController = function($scope, library, libraryApi, message) {
+        $scope.library = library;
 
         message.info("Featching book from searver.");
 
         libraryApi.getBooks()
             .then(function(data) {
-                Library.addBooks(data);
+                library.addBooks(data);
                 message.success("Book list loaded.");
             }, function(reasone) {
                 message.error("Could not fetch data from server.");

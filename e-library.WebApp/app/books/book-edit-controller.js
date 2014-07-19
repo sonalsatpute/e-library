@@ -1,25 +1,25 @@
 ﻿(function() {
 
-    var bookEditController = function($scope, $log, libraryApi, Library, message) {
+    var bookEditController = function ($scope, $log, library, libraryApi, message) {
 
-        $scope.library = Library;
+        $scope.library = library;
 
         var editBook = function(book) {
 
             message.info("Saving book");
             libraryApi.editBook(book)
                 .then(function(data) {
-                    Library.editBook(data);
-                    Library.modalWindow.close();
+                    library.editBook(data);
+                    library.modalWindow.close();
                     message.success("Book saved.");
                 }, function(reason) {
-                    Library.modalWindow.dismiss(reason);
+                    library.modalWindow.dismiss(reason);
                     $log.log(reason);
                 });
         };
 
         var cancel = function() {
-            Library.modalWindow.dismiss("Cancel");
+            library.modalWindow.dismiss("Cancel");
         };
 
         $scope.editBook = editBook;
