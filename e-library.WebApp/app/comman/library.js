@@ -23,7 +23,11 @@
             });
         };
 
-        var deleteBook = function(id) {
+        var deleteBook = function (book) {
+            var index = this.books.indexOf(book);
+            if (index != 0) {
+                this.books.splice(index, 1);
+            }
         };
 
         return {
@@ -34,7 +38,8 @@
             book: {},
             addBooks: addBooks,
             addBook: addBook,
-            editBook: editBook
+            editBook: editBook,
+            deleteBook: deleteBook
         };
     };
 

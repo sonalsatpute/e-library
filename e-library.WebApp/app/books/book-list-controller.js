@@ -18,8 +18,7 @@
                     library.book = data;
                     message.success("Book details are ready to edit.");
                     library.modalWindow = $modal.open({
-                        templateUrl: "app/books/book-edit.html",
-                        controller: "bookEditController"
+                        templateUrl: "app/books/book-edit.html"
                     });
                 }, function(reason) {
                     message.error("Unable to get the deails from server.");
@@ -28,16 +27,13 @@
         };
 
         var deleteBook = function(book) {
-
-            var index = library.books.indexOf(book);
-
-            var result = confirm("Are you sure, you want to delete '" + library.books[index].title + "' ?");
+            var result = confirm("Are you sure, you want to delete '" + book.title + "' ?");
 
             if (result == true) {
                 message.info("Deleting the book from server.");
                 libraryApi.deleteBook(book.id)
                     .then(function() {
-                        library.books.splice(index, 1);
+                        library.deleteBook(book);
                         message.success("Book deleted.");
                     }, function(reason) {
                         message.error("Unable to get the deails from server.");
