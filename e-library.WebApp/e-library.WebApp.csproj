@@ -68,10 +68,10 @@
     <Content Include="app\books\book-list-controller.js" />
     <Content Include="app\books\_list-group-item.html" />
     <Content Include="app\books\_list-group.html" />
-    <Content Include="app\comman\_header.html" />
-    <Content Include="app\comman\library-api.js" />
-    <Content Include="app\comman\message.js" />
-    <Content Include="app\comman\library.js" />
+    <Content Include="app\common\_header.html" />
+    <Content Include="app\common\library-api.js" />
+    <Content Include="app\common\message.js" />
+    <Content Include="app\common\library.js" />
     <Content Include="css\toastr.css" />
     <Content Include="css\toastr.min.css" />
     <Content Include="css\bootstrap-theme.css" />
@@ -81,8 +81,8 @@
     <Content Include="css\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
-    <Content Include="app\comman\_search-form.html" />
-    <Content Include="app\comman\main-controller.js" />
+    <Content Include="app\common\_search-form.html" />
+    <Content Include="app\common\main-controller.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
