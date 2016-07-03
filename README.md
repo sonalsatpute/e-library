@@ -1,6 +1,11 @@
 e-library
 =========
+- AngulerJS 
+- ASP.NET Web API 2 
+- Twitter Bootstrap
 
+Setup
+======
 Please follow the below steps to run the application from visual studio.
 
 1. Open the solution
